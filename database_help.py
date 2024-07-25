@@ -6,7 +6,7 @@ import pymysql
 
 
 def get_db_connection():
-    # Replace with your actual connection details
+   
     cnx = pymysql.connect(
         # unix_socket='cartcompanion:us-central1:cartcompanion-db',  # Public IP of your Cloud SQL instance
         host= '34.28.129.223', #='./cloudsql/cartcompanion-bc44dc2a32b1.json',  # Public IP of your Cloud SQL instance
@@ -27,56 +27,10 @@ def get_db_connection():
         print(f'Connection Fail : {e}')
         # cnx.close()
 
-# def get_db_connection():
-#     # Replace these values with your Cloud SQL instance details
-#     db_user = "shrutika"
-#     db_password = "shrutika"
-#     db_name = "cartcompanion"
-#     db_connection_name = "cartcompanion:us-central1:cartcompanion-db"
-# #     db_connection_name = "cartcompanion-430417:us-east1:cartcompanion-db"
-
-#     try:
-#         cnx = mysql.connector.connect(
-#                 user=db_user,
-#                 password=db_password,
-#                 database=db_name,
-#                 host=f'/cloudsql/{db_connection_name}'
-#             )
-
-#         if cnx.is_connected():
-#                 print("Successfully connected to the database.")
-#         return cnx
-#     except Error as e:
-#         print(f"Error while connecting to MySQL: {e}")
-#         sys.exit()
-#     # except Error as err:
-#     #    print(f"Error: '{err}'")
-#     #    return None
 
 
-# def get_db_connection():
-# #    cnx = mysql.connector.connect(
-#    cnx = MySQLdb.connect(
-#        host="localhost",
-#        user="root",
-#        password="root",
-#        database="cartcompanion",
-#        auth_plugin="mysql_native_password"
-#    )
-#    return cnx
 
-#def get_db_connection():
-#    cnx = mysql.connector.connect(
-#        host="34.28.129.223",
-#       user="shrutika",
-#       password="shrutika",
-#       database="cartcompanion",
-#       auth_plugin="mysql_native_password"
-#   )
-#   return cnx
-
-
-def insert_order_item(order_id, dress_id, quantity, a_price):
+def insert_order_item(order_id, dress_id, quantity, a_price):   #add to cart
     cnx = get_db_connection()
     cursor = cnx.cursor()
 
@@ -94,7 +48,7 @@ def insert_order_item(order_id, dress_id, quantity, a_price):
         cnx.close()
 
 
-def insert_order_tracking(order_id, status):
+def insert_order_tracking(order_id, status):  #track order
     cnx = get_db_connection()
     cursor = cnx.cursor()
     query = "INSERT INTO trackingtable (OrderID, Status) VALUES (%s, %s)"
@@ -103,7 +57,7 @@ def insert_order_tracking(order_id, status):
     cursor.close()
 
 
-def insert_order_summury(order_id, total_order_price):
+def insert_order_summury(order_id, total_order_price):  #purchase order
     cnx = get_db_connection()
     cursor = cnx.cursor()
     query = "INSERT INTO order_summury (OrderID, Total_Price) VALUES (%s, %s)"
@@ -112,7 +66,7 @@ def insert_order_summury(order_id, total_order_price):
     cursor.close()
 
 
-def get_dress_id(dresstype, size, gender):
+def get_dress_id(dresstype, size, gender): #accessing dress id
     cnx = get_db_connection()
     cursor = cnx.cursor()
 
@@ -132,7 +86,7 @@ def get_dress_id(dresstype, size, gender):
         cnx.close()
 
 
-def get_dress_price(dress_id):
+def get_dress_price(dress_id):   #for dress price
     cnx = get_db_connection()
     cursor = cnx.cursor()
 
@@ -151,7 +105,7 @@ def get_dress_price(dress_id):
         cnx.close()
 
 
-def get_total_order_price(order_id):
+def get_total_order_price(order_id):   # total amount of order
     cnx = get_db_connection()
     cursor = cnx.cursor()
 
@@ -171,7 +125,7 @@ def get_total_order_price(order_id):
         cnx.close()
 
 
-def get_next_order_id():
+def get_next_order_id():    #assign next order id to newly added oredr
     cnx = get_db_connection()
     cursor = cnx.cursor()
 
@@ -191,7 +145,7 @@ def get_next_order_id():
         cnx.close()
 
 
-def get_order_status(order_id):
+def get_order_status(order_id): #track status
     cnx = get_db_connection()
     cursor = cnx.cursor()
 
