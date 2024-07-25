@@ -76,13 +76,13 @@ def get_db_connection():
 #   return cnx
 
 
-def insert_order_item(order_id, dress_id, quantity, total_price):
+def insert_order_item(order_id, dress_id, quantity, a_price):
     cnx = get_db_connection()
     cursor = cnx.cursor()
 
     try:
         query = "INSERT INTO ordertable (OrderId, DressId, Quantity, TotalPrice) VALUES (%s, %s, %s, %s)"
-        cursor.execute(query, (order_id, dress_id, quantity, total_price))
+        cursor.execute(query, (order_id, dress_id, quantity, a_price))
         cnx.commit()
         return 0
     except mysql.connector.Error as err:
@@ -103,10 +103,10 @@ def insert_order_tracking(order_id, status):
     cursor.close()
 
 
-def insert_order_summary(order_id, total_order_price):
+def insert_order_summury(order_id, total_order_price):
     cnx = get_db_connection()
     cursor = cnx.cursor()
-    query = "INSERT INTO order_summury (OrderId, Sum_Price) VALUES (%s, %s)"
+    query = "INSERT INTO order_summury (OrderId, Total_Price) VALUES (%s, %s)"
     cursor.execute(query, (order_id, total_order_price))
     cnx.commit()
     cursor.close()
@@ -156,7 +156,7 @@ def get_total_order_price(order_id):
     cursor = cnx.cursor()
 
     try:
-        query = "SELECT SUM(TotalPrice) FROM ordertable WHERE OrderId = %s"
+        query = "SELECT SUM(a_price) FROM ordertable WHERE OrderId = %s"
         cursor.execute(query, (order_id,))
         result = cursor.fetchone()
         if result:
