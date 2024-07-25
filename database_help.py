@@ -137,7 +137,7 @@ def get_dress_price(dress_id):
     cursor = cnx.cursor()
 
     try:
-        query = "SELECT price FROM dress WHERE DressID = {dress_id}"
+        query = "SELECT Price FROM dress WHERE DressID = {dress_id}"
         cursor.execute(query)
         result = cursor.fetchone()
         if result:
