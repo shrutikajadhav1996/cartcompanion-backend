@@ -156,7 +156,7 @@ def get_total_order_price(order_id):
     cursor = cnx.cursor()
 
     try:
-        query = "SELECT SUM(a_price) FROM ordertable WHERE OrderID = %s"
+        query = "SELECT SUM(TotalPrice) FROM ordertable WHERE OrderID = %s"
         cursor.execute(query, (order_id,))
         result = cursor.fetchone()
         if result:
