@@ -52,7 +52,7 @@ def save_to_db(order: dict):
         if rcode == -1:
             return -1
 
-    order_summary_rcode = database_help.insert_order_summary(next_order_id, total_order_price)
+    order_summary_rcode = database_help.insert_order_summury(next_order_id, total_order_price)
     if order_summary_rcode == -1:
         return -1
 
