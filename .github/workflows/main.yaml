@@ -53,6 +53,10 @@ jobs:
           # By default, this argument is set to "web".
           # For more information look at https://devcenter.heroku.com/articles/process-model
           process_type: web
+          run: |
+              docker build -t registry.heroku.com/cartcompanionfrontend/web .
+              docker push registry.heroku.com/cartcompanionfrontend/web
+              heroku container:release web --app cartcompanionfrontend
           
    
           
