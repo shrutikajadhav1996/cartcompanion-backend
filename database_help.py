@@ -106,7 +106,7 @@ def insert_order_tracking(order_id, status):
 def insert_order_summary(order_id, total_order_price):
     cnx = get_db_connection()
     cursor = cnx.cursor()
-    query = "INSERT INTO order_summary (OrderId, Sum_Price) VALUES (%s, %s)"
+    query = "INSERT INTO order_summury (OrderId, Sum_Price) VALUES (%s, %s)"
     cursor.execute(query, (order_id, total_order_price))
     cnx.commit()
     cursor.close()
