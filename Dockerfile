@@ -8,6 +8,7 @@ WORKDIR /app
 
 RUN apt-get update
 RUN apt-get install -y default-libmysqlclient-dev build-essential
+RUN apt-get install python3-distutils
 
 # Copy the requirements.txt file into the container
 COPY requirements.txt .
