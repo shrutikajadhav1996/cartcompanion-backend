@@ -40,7 +40,7 @@ def save_to_db(order: dict):
             return -1
 
         a_price = quantity * dress_price
-        total_order_price += total_price
+        total_order_price += a_price
 
         rcode = database_help.insert_order_item(
             next_order_id,
