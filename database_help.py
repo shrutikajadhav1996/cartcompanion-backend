@@ -81,7 +81,7 @@ def insert_order_item(order_id, dress_id, quantity, a_price):
     cursor = cnx.cursor()
 
     try:
-        query = "INSERT INTO ordertable (OrderId, DressId, Quantity, TotalPrice) VALUES (%s, %s, %s, %s)"
+        query = "INSERT INTO ordertable (OrderID, DressID, Quantity, TotalPrice) VALUES (%s, %s, %s, %s)"
         cursor.execute(query, (order_id, dress_id, quantity, a_price))
         cnx.commit()
         return 0
@@ -97,7 +97,7 @@ def insert_order_item(order_id, dress_id, quantity, a_price):
 def insert_order_tracking(order_id, status):
     cnx = get_db_connection()
     cursor = cnx.cursor()
-    query = "INSERT INTO trackingtable (OrderId, Status) VALUES (%s, %s)"
+    query = "INSERT INTO trackingtable (OrderID, Status) VALUES (%s, %s)"
     cursor.execute(query, (order_id, status))
     cnx.commit()
     cursor.close()
@@ -106,7 +106,7 @@ def insert_order_tracking(order_id, status):
 def insert_order_summury(order_id, total_order_price):
     cnx = get_db_connection()
     cursor = cnx.cursor()
-    query = "INSERT INTO order_summury (OrderId, Total_Price) VALUES (%s, %s)"
+    query = "INSERT INTO order_summury (OrderID, Total_Price) VALUES (%s, %s)"
     cursor.execute(query, (order_id, total_order_price))
     cnx.commit()
     cursor.close()
@@ -117,7 +117,7 @@ def get_dress_id(dresstype, size, gender):
     cursor = cnx.cursor()
 
     try:
-        query = "SELECT DressId FROM dress WHERE DressType = %s AND Dress = %s AND Gender = %s"
+        query = "SELECT DressID FROM dress WHERE DressType = %s AND Dress = %s AND Gender = %s"
         cursor.execute(query, (dresstype, size, gender))
         result = cursor.fetchone()
         if result:
@@ -137,7 +137,7 @@ def get_dress_price(dress_id):
     cursor = cnx.cursor()
 
     try:
-        query = f"SELECT price FROM dress WHERE DressId = {dress_id}"
+        query = "SELECT price FROM dress WHERE DressID = {dress_id}"
         cursor.execute(query)
         result = cursor.fetchone()
         if result:
@@ -156,7 +156,7 @@ def get_total_order_price(order_id):
     cursor = cnx.cursor()
 
     try:
-        query = "SELECT SUM(a_price) FROM ordertable WHERE OrderId = %s"
+        query = "SELECT SUM(a_price) FROM ordertable WHERE OrderID = %s"
         cursor.execute(query, (order_id,))
         result = cursor.fetchone()
         if result:
@@ -176,7 +176,7 @@ def get_next_order_id():
     cursor = cnx.cursor()
 
     try:
-        query = "SELECT MAX(OrderId) FROM ordertable"
+        query = "SELECT MAX(OrderID) FROM ordertable"
         cursor.execute(query)
         result = cursor.fetchone()
         if result[0] is None:
@@ -196,7 +196,7 @@ def get_order_status(order_id):
     cursor = cnx.cursor()
 
     try:
-        query = "SELECT status FROM trackingtable WHERE OrderId = %s"
+        query = "SELECT status FROM trackingtable WHERE OrderID = %s"
         cursor.execute(query, (order_id,))
         result = cursor.fetchone()
         if result:
