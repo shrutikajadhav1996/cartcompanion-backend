@@ -138,7 +138,7 @@ def get_dress_price(dress_id):
 
     try:
         query = "SELECT Price FROM dress WHERE DressID = %s"
-        cursor.execute(query, (order_id,))
+        cursor.execute(query, (dress_id,))
         result = cursor.fetchone()
         if result:
             return result[0]
