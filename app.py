@@ -39,14 +39,14 @@ def save_to_db(order: dict):
         if not dress_price:
             return -1
 
-        total_price = quantity * dress_price
+        a_price = quantity * dress_price
         total_order_price += total_price
 
         rcode = database_help.insert_order_item(
             next_order_id,
             dress_id,
             quantity,
-            total_price
+            a_price
         )
 
         if rcode == -1:
