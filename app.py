@@ -141,7 +141,7 @@ def remove_from_order(parameters: dict, session_id: str):
         fulfillment_text += " Your order is empty!"
     else:
         order_str = connection_help.get_str_from_order_dict(current_order)
-        fulfillment_text += f" Here is what is left in your order: {order_str}"
+        fulfillment_text += f" Here is what is left in your order: {order_str} . Do you need anything else?"
 
     return jsonify({
         "fulfillmentText": fulfillment_text
