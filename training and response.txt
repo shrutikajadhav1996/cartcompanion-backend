@@ -1,0 +1,136 @@
+Default Welcome Intent
+
+Hi CartCompanion
+heya CartCompanion
+hello hi CartCompanion
+howdy
+hey there CartCompanion
+hi there CartCompanion
+greetings CartCompanion
+hey
+hello
+Hey CartCompanion..!
+I greet you CartCompanion
+hello again CartCompanion
+hi
+hello there CartCompanion
+a good day CartCompanion
+
+Text Response
+Hello, How can I help you? Just say 'New Order,' or 'Track Order' and I'll help you get started right away.
+Good day! What can I do for you today? Simply say 'New Order,' or 'Track Order' and I'll be here to assist you every step of the way.
+Greetings! How can I assist? Just say 'New Order,' and I'll guide you through the process
+****************************************************************************************************************************************************************************************
+
+New Order
+Order Dress
+Order a dress for me.
+Order a men's dress for me.
+Order a women's dress for me.
+Can I get a dress for men?
+Can I get a dress for boy?
+Can I get a dress for girl?
+Add dress
+Order dress
+Place new order
+new order
+I want to order a women's dress.
+I want men dress
+I want women dress
+I'd like to order dress
+I'd like to add dress
+I want dress for boy
+I want dress for girl
+I want girl dress
+I want boy dress
+girl dress
+boy dress
+men dress
+women dress
+man dress
+woman dress
+
+Text response
+Sure, starting a new order. Please specify the exact dress name as shown in the description the quantity, and the size.  For example, you can say "Add one women floral dress in size medium to my cart."
+Starting new order. Please specify the exact dress name as shown in the description the quantity, and the size.  For example, you can say "Add one women floral dress in size medium to my cart."
+
+*****************************************************************************************************************************************************************************************************************************
+order_addDress- Context - Inorder
+
+one Pink checks frock for girl in size s. 
+Add one woman  Yellow Short Dress in size L and one woman  Floral dress in size L 
+Can you add one women Black short dress, size L, to my shopping cart? I would also like one Pink Formal shirt with pant for men in size M.
+Add one small sized men Blue t-shirt to my cart
+Add one small-sized men White t-shirt to my cart
+I'd like one men Black suit with tie, size XL, added to my cart.
+one Floral dress in size M for woman  and one White t-shirt in size L for man 
+I want one Golden Party Gown, woman size medium
+Can you place one size s  Pink checks frock for girl in my cart?
+I need two boy red t-shirt, size extra large, added to my cart.
+Additionally, add one  men xl size Grey Suit
+Add two Pink Formal shirt with pant, size L, for men to my cart
+Also, put one large size women Blue Short Dress.
+Yes. I want one  man  large size blue t-shirt
+
+Text response
+I have added $number $Dress-Size $Dress-type  to your cart. Can I help you with anything else?
+********************************************************************************************************************************************************************************************************************************
+
+
+Remove_Order- context-Inorder
+Remove one medium size woman Black Party gown
+can you remove two extra large size women's Yellow Short Dress  ?
+I don't want one large size women Golden Party Gown
+I'd like to exclude one m size women yellow dress and , one xl size Blue t-shirt for men please
+Take out one men Pink Formal shirt with pant, size medium
+Remove one  red t-shirt in size M of boy
+Delete one  girl  medium Pink checks frock
+Also remove one xl size men black suit with tie
+Cancel my order of boy one small size White t-shirt
+Remove item from cart one xl size man Pink formal
+I'd like to remove one boy medium size White t-shirt
+Remove order of girl One xl size Pink checks frock
+
+Text response 
+Removed $number $Dress-Size size $gender $Dress-type
+*******************************************************************************************************************************************************************************************************************************************
+order_Placed-Context- Inorder
+Purchase products
+I would like to purchase.
+Purchase products from my cart.
+Ready to purchase.
+That's it
+Done
+Place an order
+Done ordering it
+That's all I needed
+Nope, purchase product
+Nope
+
+Text response
+Ok. I will proceed your order. Your Tracking Id  # 
+
+Output : Awesome. We have placed your order. Here is your order id # {order_id}. Your order total is {order_total} which you can pay through Credit or Debit card
+********************************************************************************************************************************************************************************************************************************************************
+Track_Order
+track existing order
+track order
+check the status of my order
+
+Text response
+Definitely. What is your order id?
+Sure. Please enter your order id.
+
+*****************************************************************************************************************************************************************************************************************************************************
+Track_Order- Context-Track-Inorder
+345
+123
+7890
+here is my order id # 341
+here is my order number 675
+here it is - 63321
+here you go: 123
+how about 40
+how about 32?
+
+Output : Order 30 is in transit.
