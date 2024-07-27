@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CartCompanion</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header>
+	    <img src="logo.png" alt="Logo"  style="margin-right: auto;">
+        <h1>My Shopping Website</h1>
+        <p>Welcome to the best shopping experience!</p>
+    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#women">Women</a>
+        <a href="#men">Men</a>
+        <a href="#girls">Girls</a>
+        <a href="#boys">Boys</a>
+        <a href="#cart">Cart</a>
+        <a href="#purchase">Purchase</a>
+    </nav>
+    <div class="container">
+        <div class="main-content">
+            <h2 id="women">Women's Collection</h2>
+            <div class="product-list">
+                <div class="product">
+			    <img src="IMG_2635.JPG" alt="Product 1">
+                <h3>Yellow Short Dress</h3>
+                <p>$30.00</p>
+                <label for="size1">Size:</label>
+                <select id="size1">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+                <button onclick="addToCart('Product 1', document.getElementById('size1').value)">Add to Cart</button>
+            </div>
+            <div class="product">
+			     <img src="IMG_2636.jpg" alt="Product 2">
+                <h3>Blue Short Dress</h3>
+                <p>$25.00</p>
+                <label for="size2">Size:</label>
+                <select id="size2">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+                <button onclick="addToCart('Product 2', document.getElementById('size2').value)">Add to Cart</button>
+            </div>
+			<div class="product">
+			    <img src="product3.jpg" alt="Product 3">
+                <h3>Golden Party Gown</h3>
+                <p>$50.00</p>
+                <label for="size3">Size:</label>
+                <select id="size3">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+                <button onclick="addToCart('Product3', document.getElementById('size3').value)">Add to Cart</button>
+            </div>
+             <div class="product">
+			    <img src="IMG_2637.JPG" alt="Product 4">
+                <h3>Floral dress</h3>
+                <p>$20.00</p>
+                <label for="size4">Size:</label>
+                <select id="size4">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+                <button onclick="addToCart('Product 4', document.getElementById('size4').value)">Add to Cart</button>
+            </div>
+			 <div class="product">
+			    <img src="Dress-PNG.png" alt="Product 5">
+                <h3>Black Party gown</h3>
+                <p>$80.00</p>
+                <label for="size5">Size:</label>
+                <select id="size5">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+                <button onclick="addToCart('Product 5', document.getElementById('size5').value)">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+	
+	<section id="men">
+        <h2>Men's Category</h2>
+        <div class="product-list">
+            <div class="product">
+			    <img src="product 6.jpg" alt="Product 6">
+                <h3>Pink Formal shirt with pant</h3>
+                <p>$50.00</p>
+				<label for="size6">Size:</label>
+                <select id="size2">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+                <button onclick="addToCart('Product 6', document.getElementById('size6').value)">Add to Cart</button>)">Add to Cart</button>
+            </div>
+            <div class="product">
+			    <img src="IMG_2641.JPG" alt="Product 7">
+                <h3>Grey Suit</h3>
+                <p>$80.00</p>
+				<label for="size7">Size:</label>
+                <select id="size7">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+                <button onclick="addToCart('Product 7 , document.getElementById('size7').value)">Add to Cart</button>')">Add to Cart</button>
+            </div>
+			<div class="product">
+			    <img src="white.jpg" alt="Product 8">
+                <h3>White t-shirt</h3>
+                <p>$20.00</p>
+				<label for="size8">Size:</label>
+                <select id="size8">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+                <button onclick="addToCart('Product 8 , document.getElementById('size8').value)">Add to Cart</button>')">Add to Cart</button>
+            </div>
+			<div class="product">
+			    <img src="product8.jpg" alt="Product 9">
+                <h3>Black suit with tie</h3>
+                <p>$100.00</p>
+				<label for="size9">Size:</label>
+                <select id="size9">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+                <button onclick="addToCart('Product 9 , document.getElementById('size9').value)">Add to Cart</button>')">Add to Cart</button>
+            </div>
+			<div class="product">
+			    <img src="product9.jpg" alt="Product 10">
+                <h3>Blue t-shirt</h3>
+                <p>$15.00</p>
+				<label for="size10">Size:</label>
+                <select id="size10">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+                <button onclick="addToCart('Product 10 , document.getElementById('size5').value)">Add to Cart</button>')">Add to Cart</button>
+            </div>
+
+	</section>
+		
+	<section id="girl">
+        <h2>Girl's Category</h2>
+        <div class="product-list">
+
+			<div class="product">
+			    <img src="product12.jpg" alt="Product 12">
+                <h3>Pink checks frock</h3>
+                <p>$20.00</p>
+				<label for="size12">Size:</label>
+                <select id="size12">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+                <button onclick="addToCart('Product 12 , document.getElementById('size12').value)">Add to Cart</button>')">Add to Cart</button>
+            </div>
+        </section>  
+        </div>
+    </section>
+	
+	<section id="boy">
+        <h2>Boy's Category</h2>
+        <div class="product-list">
+
+			<div class="product">
+			    <img src="product13.jpg" alt="Product 13">
+                <h3>red t-shirt</h3>
+                <p>$20.00</p>
+				<label for="size13">Size:</label>
+                <select id="size13">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+                <button onclick="addToCart('Product 13 , document.getElementById('size13').value)">Add to Cart</button>')">Add to Cart</button>
+            </div>
+		</div>
+     </section>  
+        
+
+        <div class="cart" id="cart">
+            <h2>Your Cart</h2>
+            <div id="cartItems"></div>
+            <h3>Total: $<span id="totalAmount">0.00</span></h3>
+            <button onclick="checkout()">Checkout</button>
+        </div>
+
+        <div class="chatbot">
+<iframe width="350" height="430" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/571284fa-c0d1-433d-9d9a-c65a270ae665"></iframe>
+            
+  
+
+    <script src="scripts.js"></script>
+</body>
+</html>
+
+
+
